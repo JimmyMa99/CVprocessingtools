@@ -10,14 +10,16 @@ def merge_coco_datasets(dataset1_path, dataset2_path, output_path):
         dataset2 = json.load(f)
 
     # 获取第一个数据集中最大的ID
-    max_id = max(annotation['id'] for annotation in dataset1['annotations'])
+    max_image_id = max(image['id'] for image in dataset1['images'])
+    max_ann_id = max(annotation['id'] for annotation in dataset1['annotations'])
 
     # 将第二个数据集中的ID逐一增加最大ID的值
-    for annotation in dataset2['annotations']:
-        annotation['id'] += max_id
-
     for image in dataset2['images']:
-        image['id'] += max_id
+        image['id'] += max_image_id
+
+    for annotation in dataset2['annotations']:
+        annotation['image_id'] += max_image_id
+        annotation['id'] += max_ann_id
 
     # 合并两个数据集
     # breakpoint()
