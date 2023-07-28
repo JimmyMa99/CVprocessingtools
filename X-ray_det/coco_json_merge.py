@@ -1,5 +1,6 @@
 import json
 
+
 def merge_coco_datasets(dataset1_path, dataset2_path, output_path):
     # 读取第一个数据集的JSON文件
     with open(dataset1_path, 'r') as f:
@@ -11,7 +12,8 @@ def merge_coco_datasets(dataset1_path, dataset2_path, output_path):
 
     # 获取第一个数据集中最大的ID
     max_image_id = max(image['id'] for image in dataset1['images'])
-    max_ann_id = max(annotation['id'] for annotation in dataset1['annotations'])
+    max_ann_id = max(annotation['id']
+                     for annotation in dataset1['annotations'])
 
     # 将第二个数据集中的ID逐一增加最大ID的值
     for image in dataset2['images']:
@@ -33,6 +35,7 @@ def merge_coco_datasets(dataset1_path, dataset2_path, output_path):
     # 写入合并后的JSON文件
     with open(output_path, 'w') as f:
         json.dump(merged_dataset, f)
+
 
 # 示例用法
 dataset1_path = '/root/autodl-tmp/mmyolo/data/kdxf/output.json'

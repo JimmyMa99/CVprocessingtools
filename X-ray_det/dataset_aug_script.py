@@ -4,16 +4,19 @@ import random
 import json
 from PIL import Image
 
+
 def flip_image(image_path, output_path):
     with Image.open(image_path) as img:
         flipped_img = img.transpose(Image.FLIP_LEFT_RIGHT)
         flipped_img.save(output_path)
+
 
 def flip_annotations(annotations, width):
     for annotation in annotations['annotations']:
         bbox = annotation['bbox']
         x_min = width - bbox[0] - bbox[2]
         annotation['bbox'][0] = x_min
+
 
 def augment_dataset(image_dir, annotation_file, output_dir):
     class_counts = {
@@ -36,7 +39,8 @@ def augment_dataset(image_dir, annotation_file, output_dir):
 
     for class_name, count in class_counts.items():
         # Randomly select existing samples to augment
-        samples_to_augment = random.sample(range(len(annotations['images'])), count)
+        samples_to_augment = random.sample(
+            range(len(annotations['images'])), count)
 
         for idx in samples_to_augment:
             image_info = annotations['images'][idx]
