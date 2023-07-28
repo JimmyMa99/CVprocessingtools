@@ -47,9 +47,9 @@ def copy_images_and_labels(source_image_folder, source_label_folder, destination
     print("复制完成！")
 
 # 设置源图片文件夹路径、源标签文件夹路径和目标文件夹路径
-source_image_folder = "/media/ders/mazhiming/mm/mmrotate/data/processed_data/train_upload/imagespng" # 图片
-source_label_folder = "/media/ders/mazhiming/mm/mmrotate/data/processed_data/train_upload/dota_format" # 标签
-destination_folder = "/media/ders/mazhiming/mm/mmrotate/data/few_shot" # 目标文件夹
+source_image_folder = "" # 图片
+source_label_folder = "" # 标签
+destination_folder = "" # 目标文件夹
 
 # 指定需要复制的样本数量
 num_samples = 1000

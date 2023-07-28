@@ -2,14 +2,13 @@ import os
 import glob
 
 # 设定目录
-image_dir = "/media/ders/mazhiming/mm/mmrotate/data/data/train_upload/images"
-label_path = "/media/ders/mazhiming/mm/mmrotate/data/data/train_upload/labelTxt_new"
-new_label_path = "/media/ders/mazhiming/mm/mmrotate/data/data/dota_format"
-
+image_dir = ""
+label_path = ""
+new_label_path = ""
 
 if not os.path.exists(new_label_path):
-    os.makedirs(new_label_path)
 
+    os.makedirs(new_label_path)
 for file in os.listdir(label_path):
     if file.endswith('.txt'):
         with open(os.path.join(label_path, file), 'r') as f:

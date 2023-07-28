@@ -34,7 +34,7 @@ def convert_bmp_to_png(source_dir, target_dir):
         list(tqdm(executor.map(convert_image, filenames, [source_dir]*len(filenames), [target_dir]*len(filenames)), total=len(filenames)))
 
 
-source_dir = '/media/ders/mazhiming/mm/mmrotate/data/data/images' # 这里填写源文件夹路径
-target_dir = '/media/ders/mazhiming/mm/mmrotate/data/data/imagespng' # 这里填写目标文件夹路径
+source_dir = '' # 这里填写源文件夹路径
+target_dir = '' # 这里填写目标文件夹路径
 
 convert_bmp_to_png(source_dir, target_dir)
