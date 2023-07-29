@@ -38,8 +38,8 @@ def merge_coco_datasets(dataset1_path, dataset2_path, output_path):
 
 
 # 示例用法
-dataset1_path = '/root/autodl-tmp/mmyolo/data/kdxf/output.json'
-dataset2_path = '/root/autodl-tmp/mmyolo/data/kdxf_aug/augmented_dataset.json'
+dataset1_path = ''
+dataset2_path = ''
 output_path = 'merged_dataset.json'
 
 merge_coco_datasets(dataset1_path, dataset2_path, output_path)
