@@ -86,9 +86,9 @@ def augment_dataset(image_dir, annotation_file, output_dir):
 
 
 # 脚本输入
-data_image_dir = 'data/kdxf'
-data_annotation_dir = 'data/kdxf/output.json'
-output_dir = 'data/kdxf_aug'
+data_image_dir = ''
+data_annotation_dir = ''
+output_dir = ''
 
 # 数据增强
 augment_dataset(data_image_dir, data_annotation_dir, output_dir)
